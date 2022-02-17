@@ -1,0 +1,21 @@
+<table class="table mb-5">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of source; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{ data.name }}</td>
+            <ng-container [ngSwitch]="data.tipo">
+                <td *ngSwitchCase="'date'">{{data.value | date : 'dd/MM/yyyy'}}</td>
+                <td *ngSwitchCase="'currency'">{{data.value | currency }}</td>
+                <td *ngSwitchCase="'percent'">{{data.value | percent: '0.0' }}</td>
+                <td *ngSwitchDefault>{{ data.value | alreves }}</td>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,11 @@
+.exercise {
+    margin: 40px 0;
+}
+
+.exercise > .explanation {
+}
+.exercise > .necesity {
+}
+.exercise > .tip {
+    color: chocolate;
+}

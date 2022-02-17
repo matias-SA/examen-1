@@ -1,0 +1,15 @@
+<ng-container *ngIf="dataFilter.length !== 0; else noFrameworks">
+    <div  class="d-flex justify-content-around">
+        <div class="card w-25 ms-1" *ngFor="let tecnology of dataFilter">
+            <img [src]="tecnology.img" alt="Avatar" style="width:100%">
+            <div class="">
+              <h4><b>{{tecnology.tecnologia}}</b></h4> 
+              <p>{{tecnology.descripcion}}</p> 
+            </div>
+          </div>
+    </div>
+</ng-container>
+<ng-template #noFrameworks>
+    <h2>No se han encontrado resultados</h2>
+</ng-template>
+

@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="submit(form.value)">
+  <div class="row">
+    <div class="col-4 my-2">
+      <select class="form-select" formControlName="helado" aria-label="Elegir gusto de helado">
+        <option selected>Gusto de helado</option>
+        <option value="choco-1">Chocolate</option>
+        <option value="vainilla">Vainilla</option>
+        <option value="choco-2">Chocolate de nuevo</option>
+      </select>
+    </div>
+    <div class="col-4 my-2">
+      <div class="form-check">
+        <input class="form-check-input" value="retiro en el local" formControlName="entregaDelPedido" type="radio"  id="icecreamflavor1">
+        <label class="form-check-label" for="icecreamflavor1">
+          Retiro en el local
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" value="envio a domicilio" type="radio" formControlName="entregaDelPedido"  id="icecreamflavor2" checked>
+        <label class="form-check-label" for="icecreamflavor2">
+          Envío a domicilio
+        </label>
+      </div>
+    </div>
+    <div class="col-4 my-2">
+      <label for="name"  class="form-label">Nombre y Apellido</label>
+      <input formControlName="name" type="text" id="name">
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary" type="submit">Pedir helado</button>
+  </div>
+</form>
